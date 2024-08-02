@@ -1,0 +1,179 @@
+
+.main-panel{
+    display: flex;
+    flex-direction: row;
+}
+.lab-section{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Poppins';
+    padding: 2%;
+}
+.main-title{
+    text-align: center;
+    margin-top: 70px;
+    padding-top: 20px;
+    width: 100%;
+    background-color: white;
+    font-family: "Poppins";
+    z-index: 1;
+}
+.lab-text{
+    padding-left: 2%;
+    height: 150px;
+}
+form[name="reserve_slots"] {
+    width: 50%;
+    padding: 2%;
+    background-color: #fafafa;
+    margin: 0 5% 0 10%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datetime {
+    display: flex;
+    margin-left: 50%;
+    width: 100%;
+}
+
+.datetime input[type="date"],
+.datetime input[type="text"],
+.datetime select {
+    padding: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+    height: 20px;
+}
+
+.datetime select {
+    width: 150px; 
+    height: 35px; 
+    padding: 5px;
+}
+
+.small-icon{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+.room-container{
+    background-color: #e0e0e0;
+    width: 90%;
+    margin: 10px auto;
+    padding-left: 4%;
+}
+#schedule-form{
+    margin-top: 20px;
+    position: absolute;
+    left: 60%;
+    z-index: 3;
+}
+.seat, .seat-reserved, .seat-selected{
+    height: 18px;
+    width: 25px;
+    border-radius: 10px 10px 0 0;
+    padding: 7px 5px;
+    margin: 5px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    font-size: 11px
+}
+.seat:hover{
+    background-color: #8fe12b;
+}
+.seat:active, .seat-selected{
+    background-color: #7ec627;
+}
+.seat-reserved{
+    background-color: #b88232;
+}
+td{
+    width: 40px;
+    height: 40px;
+}
+.floor-layout{
+    margin: 10% auto; /* Center vertically */
+    width: 85%;
+    
+}
+.legend{
+    width: 60px;
+    border-radius: 20px;
+    padding: 2px;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    margin: 0 0 10px 10px;
+    float: left;
+}
+.legend-container{
+    margin-left: 30%;
+    padding-bottom: 10%;
+}
+#reserved-legend{
+    background-color: #b88232;
+}
+#available-legend{
+    background-color: #222;
+}
+#selected-legend{
+    background-color: #7ec627;
+}
+.timeslots{
+    font-size: 11px;
+    width: 150px;
+}
+h3{
+    padding:0;
+    margin:10px 0 0 0;
+}
+.reserve-button, .makeRes-button{
+    background-color: #c0eb6a;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-width: 0px;
+    margin: 5px 40%;
+}
+.makeRes-button{
+    margin: 5px 0%;
+}
+.reserve-button:hover, .makeRes-button:hover{
+    background-color: #7eb042;
+}
+.reserve-button:active, .makeRes-button:active{
+    color:#fff;
+}
+.reservations{
+    width: 30%;
+    font-size: 12px;
+}
+
+.reserver-dropdown {
+    background-color: #8f601a;
+    font-size: 8px;
+    padding: 2px;
+    z-index: 1000;
+    opacity: 0.9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.reserver-link {
+    display: block;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.reserver-link:hover {
+    color: lightgray;
+}

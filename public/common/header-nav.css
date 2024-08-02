@@ -1,0 +1,79 @@
+
+body{
+    margin: 0;
+    font-family: 'Poppins';
+}
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    background-color: #48534F;
+    color: #FFFFFF;
+    font-family: "Poppins";
+    z-index: 2;
+}
+.nav-options{
+    list-style-type: none;
+    width: 30%;
+}
+.nav-option{
+    float: left;
+    padding: 20px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    font-style: 'ExtraBold';
+    margin: 10px 0 0 20px;
+    width: 60%;
+    height: 100px;
+}
+
+.page-title{
+    display: flex;
+    flex-direction: row;
+    margin: 23px 0 0 10px;
+    font-size: 25px;
+}
+#logo{
+    height: 80%;
+}
+.search{
+    width: 200px;
+    background-color: white;
+    height: 30px;
+    border-radius: 20px;
+}
+#search{
+    border-radius: 20px;
+    border-style: none;
+    width: 30px;
+    height: 25px;
+}
+#search[type=text]{
+    width: 150px;
+    margin-left: 7px;
+}
+.search-icon{
+    height: 15px;
+}
+.search-button{
+    margin-top: 5px;
+    border-style: none;
+    background-color: white;
+}
+input:focus, button:focus {
+    outline: none;
+}
+
+.navlink{
+    text-decoration: none;
+    color: white;
+}
+.navlink-active{
+    color: rgb(192, 235, 106);
+    
+}

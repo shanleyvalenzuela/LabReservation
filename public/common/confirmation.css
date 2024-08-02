@@ -1,0 +1,114 @@
+.main-title{
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    padding-left: 40px;
+    z-index: 1;
+    color:#FFFFFF
+}
+hr {
+    border: none; /* Removes the default border */
+    border-top: 3px solid #FFFFFF;/* Creates a new border on the top */
+    width: 60%; /* Sets the width of the hr */
+    margin-left: 1px ; /* Centers the hr and adds vertical spacing */
+    margin-top: 0%;
+}
+.confirmation-container{
+    position:fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transform: translate(-0%, -25%);
+    /* opacity: 0.7;*/
+}
+.confirmation-image{
+    height: 100%; width: 100%;
+}
+.confirmation-details {
+    position: absolute;
+    display: flex; 
+    justify-content: center; /* Center the columns horizontally */
+    align-items: center; /* Center the columns vertically */
+    width: 600px;
+    background-color: #F4F6F0;
+    box-shadow: 5px 5px 5px grey;
+    top: 230px; 
+    left: 50%;
+    transform: translateX(-50%); /* Ensure the container is centered */
+    padding:20px;
+}
+.confirmation-details p {
+    font-size: 12px;
+}
+.details-column{
+    flex: 1; /* Each column will take up equal space */
+    text-align: left;
+    box-sizing: border-box; /* Include padding in the element's total width */
+    margin-right: 15%;
+    margin-left: 2%;
+}
+.details-column-sec{
+    display: flex;
+    flex-direction: column;
+    margin:2px;
+}
+.details-column2{
+    flex: 1; /* Each column will take up equal space */
+    text-align: left;
+    box-sizing: border-box; /* Include padding in the element's total width */
+    margin-right: 0x;
+}
+
+.details-icons {
+    display: flex;
+    flex-direction: column; /* Stack the icon rows vertically */
+    align-items: center; /* Center the icon rows */
+    width: 30px; height:30px; 
+    gap: 20px; /* Add space between the icon and the text */
+    margin-bottom: 24%;
+}
+
+.icon-row {
+    display: flex;
+    justify-content: center; /* Center the icons within each row */
+    gap: 0px; /* Space between icons */
+}
+
+.details-column p {
+    margin: 5px; /* Reset the margin to 0 */
+}
+.details-darkgreen{
+    color:#485550
+}
+.confirmation-footer {
+    position: fixed; /* Fix the position of the footer */
+    bottom: 0; /* Align the footer to the bottom of the viewport */
+    width: 100%; /* Cover the full width of the viewport */
+    left: 0; /* Align the footer to the start of the viewport */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; /* Center the columns horizontally */
+    align-items: center; /* Center the columns vertically */
+    background-color: #F4F6F0;
+    padding: 3px;
+}
+.confirmation-footer-container{
+    text-align: center;
+    font-size: 11px;
+}
+
+.confirmation-footer-button{
+    background-color: #c0eb6a;
+    width:60px; height:30px;
+    text-align: center;
+    font-size: 11px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-width: 0px;
+    margin-bottom: 10px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}

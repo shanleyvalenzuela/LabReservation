@@ -1,0 +1,114 @@
+
+.confirmation-container{
+    position:fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transform: translate(-0%, -25%);
+    /* opacity: 0.7;*/
+}
+.confirmation-image{
+    height: 100%; width: 100%;
+}
+.confirmation-details{
+    position: absolute; 
+    display: block;
+    height: 200px;
+    width: 600px;
+    background-color: #F4F6F0;
+    top: 100; 
+    left: 300px;
+    margin-top: 250px;
+    padding:0%;
+}
+.details-column{
+    text-align: left;
+    
+}
+.details-column2{
+    text-align: left;
+
+}
+
+.page-text{
+    position: fixed;
+    margin-left: 10%;
+    margin-top: 90px;
+    width: 100%;
+    color:#485550;
+}
+.add-reservations-container {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin-top: 12.5%;
+    margin-left: 5%;
+    flex-wrap: wrap; /* Allow items to wrap */
+    border-top: 1px solid #ddd;
+}
+.add-reservations-container > .add-reservations-menu{
+    width: 15%;
+    height: 100%;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+.add-reservations-container > .del-reservations-search {
+    /*background-image: url(https://www.dlsu.edu.ph/wp-content/uploads/2018/09/f-7.jpg);*/
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 30px 30px;
+    height: 100%;
+    width: 80%;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    background-size: cover;
+    background-position: center -150px; /* Adjusts the background image to align towards the top */
+}  
+.del-reservations-search-row{
+    width: 30%;
+    margin: 3%; 
+}
+.add-reservations-form-row1,.add-reservations-form-row2{
+    display: flex;
+     justify-content: space-between; /* Space children evenly */
+     width: 100%; /* Take full width of the parent */
+}
+
+.add-reservations-container-division1,.add-reservations-container-division2{
+    height: 50%;
+}
+
+.bot{
+    border-bottom: 1px solid #ddd;
+    border-right: 5px solid #ddd;
+    font-size: small;
+}
+a{
+    color:#485550;
+    text-decoration: none;
+}
+/*.add-reservations-inputbutton{
+    background-color:#F4F6F0;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: 11px;
+    padding: 5px 5px;
+    border-radius: 20px;
+    border-width: 0px;
+    margin-bottom: 10px;
+}*/
+.del-registration-button{
+    background-color: #c0eb6a;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    font-size: 11px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-width: 0px;
+}
+select{
+    width: 150px;
+}

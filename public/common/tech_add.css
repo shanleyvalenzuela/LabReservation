@@ -1,0 +1,209 @@
+.confirmation-container{
+    position:fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transform: translate(-0%, -25%);
+    /* opacity: 0.7;*/
+}
+.confirmation-image{
+    height: 100%; width: 100%;
+}
+.confirmation-details{
+    position: absolute; 
+    display: block;
+    height: 200px;
+    width: 600px;
+    background-color: #F4F6F0;
+    top: 100; 
+    left: 300px;
+    margin-top: 250px;
+    padding:0%;
+}
+.details-column{
+    text-align: left;
+    
+}
+.details-column2{
+    text-align: left;
+
+}
+
+.page-text{
+    position: fixed;
+    margin-left: 10%;
+    margin-top: 90px;
+    width: 100%;
+    color:#485550
+
+}
+.add-reservations-container {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin-top: 12.5%;
+    margin-left: 5%;
+    flex-wrap: wrap; /* Allow items to wrap */
+    border-top: 1px solid #ddd;
+}
+.add-reservations-container > .add-reservations-menu{
+    width: 15%;
+    height: 100%;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+.add-reservations-container > .add-reservations-form {
+    /*background-image: url(https://www.dlsu.edu.ph/wp-content/uploads/2018/09/f-7.jpg);*/
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 10px 10px;
+    height: 100%;
+    width: 80%;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    background-size: cover;
+    background-position: center -150px; /* Adjusts the background image to align towards the top */
+}  
+.add-reservations-form-col{
+    width: 30%;
+    margin: 3%; 
+}
+.add-reservations-form-row1,.add-reservations-form-row2{
+    display: flex;
+     justify-content: space-between; /* Space children evenly */
+     width: 100%; /* Take full width of the parent */
+}
+
+.add-reservations-container-division1,.add-reservations-container-division2{
+    height: 50%;
+}
+
+.bot{
+    border-bottom: 1px solid #ddd;
+    border-right: 5px solid #ddd;
+    font-size: small;
+}
+a{
+    color:#485550;
+    text-decoration: none;
+}
+/*.add-reservations-inputbutton{
+    background-color:#F4F6F0;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: 11px;
+    padding: 5px 5px;
+    border-radius: 20px;
+    border-width: 0px;
+    margin-bottom: 10px;
+}*/
+.add-registration-button{
+    background-color: #c0eb6a;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    font-size: 11px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-width: 0px;
+    margin-bottom: 10px;
+}
+
+.add-reservations-form {
+    width: 300px; /* Adjust width as needed */
+    margin: auto; /* Center the form horizontally */
+}
+
+.add-reservations-form label,
+.add-reservations-form input,
+.add-reservations-form select {
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.add-reservations-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(192, 235, 106);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+.add-reservations-form button a {
+    color: black;
+    text-decoration: none;
+}
+
+.floor-layout{
+    margin: 10% auto; /* Center vertically */
+    width: 85%;
+    
+}
+.legend{
+    width: 60px;
+    border-radius: 20px;
+    padding: 2px;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 10px 10px;
+    float: left;
+}
+.legend-container{
+    padding-bottom: 10%;
+}
+
+.seat, .seat-reserved, .seat-selected{
+    height: 18px;
+    width: 25px;
+    border-radius: 10px 10px 0 0;
+    padding: 7px 5px;
+    margin: 5px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    font-size: 11px
+}
+.seat:hover{
+    background-color: #8fe12b;
+}
+.seat:active, .seat-selected{
+    background-color: #7ec627;
+}
+.seat-reserved{
+    background-color: #b88232;
+}
+
+#reserved-legend{
+    background-color: #b88232;
+}
+#available-legend{
+    background-color: #222;
+}
+#selected-legend{
+    background-color: #7ec627;
+}
+.reserver-dropdown {
+    background-color: #8f601a;
+    font-size: 8px;
+    padding: 2px;
+    z-index: 1000;
+    opacity: 0.9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.reserver-link {
+    display: block;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.reserver-link:hover {
+    color: lightgray;
+}

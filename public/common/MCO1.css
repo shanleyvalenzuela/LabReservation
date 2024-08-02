@@ -1,0 +1,226 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nav {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 135px;
+    background-color: #48534F;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+/* Style the navigation bar links */
+.nav a {
+color: #F4F6F0;
+text-align: center;
+padding: 65px 30px;
+margin: 0%;
+}
+
+/* Change color on hover */
+.nav a:hover {
+background-color: #C0EB6A;
+}
+
+.nav-options {
+    list-style-type: none;
+    width: 30%;
+}
+
+.nav-option {
+    float: left;
+    padding: 40px 10px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    font-style: 'ExtraBold';
+    margin: 25px 0 0 25px;
+    width: 60%;
+    height: 100px;
+}
+
+.page-title {
+    display: flex;
+    flex-direction: row;
+    margin: 23px 0 0 10px;
+    font-size: 25px;
+}
+
+#logo {
+    margin-left: 5%;
+    height: 80%;
+}
+
+.search {
+    width: 200px;
+    background-color: white;
+    height: 30px;
+    border-radius: 20px;
+}
+
+#search {
+    border-radius: 20px;
+    border-style: none;
+    width: 30px;
+    height: 25px;
+}
+
+#search[type=text] {
+    width: 150px;
+}
+
+.search-icon {
+    height: 15px;
+}
+
+.search-button {
+    margin-top: 5px;
+    border-style: none;
+    background-color: white;
+}
+
+hr {
+    background-color: #C0EB6A; 
+    height:8px;
+    width: 100%;
+    margin-top: 0%;
+}
+
+span {
+    color:rgb(239, 227, 227) ;
+}
+
+.header1 {
+    color: #485550;
+    float: left;
+    margin-bottom: 0px;
+}
+
+.side{
+    width:10%;
+    height: 20px;
+}
+
+.bot{
+    border-bottom: 1px solid #ddd;
+    border-right: 5px solid #ddd;
+    width:15%;
+    font-size: small;
+    
+}
+
+.bot1{
+    border-bottom: 5px solid #ddd;
+    vertical-align: bottom;
+}
+
+
+table{
+    margin-left: 6%;
+    position: relative;
+}
+
+a {
+    color:#485550;
+    text-decoration: none;
+}
+
+.button {
+background-color: #48534F; 
+color: white; 
+padding: 5px 10px;
+border-radius: 5px;
+border-color: transparent;
+font-size: 14px;
+text-align: center;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+
+.button:hover {
+background-color: white;
+color: #48534F;
+}
+
+h3 {
+    font-size: 27px;
+    font-family: poppins;
+}
+
+.reservation-status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.RESERVED {
+    background-color: #a8d76c;
+    color: white;
+}
+
+.PENDING {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+div{
+    height: 20px;;
+}
+
+.list{
+    height: 40px;
+    border-bottom: 10px solid #C0EB6A;
+}
+
+.room{
+    list-style-type: none;
+    padding-left: 0px;
+
+}
+
+.div{
+    width: 100%; 
+    height: 37px;
+    text-align: left; 
+    vertical-align: top; 
+    padding: 0px 0px 0px 0px;
+}
+
+.form-label {
+    display: block;
+    font-size: 19px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-input {
+    display: block;
+    width: 40%;
+    border: none;
+	
+    border-bottom: 1px solid #000; /* Line instead of box */
+    font-size: 19px; /* Equivalent to h3 font-size */
+    margin-bottom: 10px;
+}
