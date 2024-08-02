@@ -1,0 +1,33 @@
+[
+
+{"id":"lab1",
+"name":"Information Systems Laboratory", 
+"img-link":"https://www.dlsu.edu.ph/wp-content/uploads/2018/09/f-7.jpg", 
+"description":"Equipped with state-of-the-art systems featuring Intel Core i7 processors, 16GB RAM, and SSD storage. Network infrastructure includes Cisco routers and switches. Located in SM308.", 
+"total-slots":25, "loc":"SM308"},
+
+{"id":"lab2",
+"name":"Computer Laboratory", 
+"img-link":"https://www.dlsu.edu.ph/wp-content/uploads/2018/11/IMG_20180502_130146-1024x768.jpg", 
+"description":"Fully equipped with modern computing facilities, including Intel Core i5 workstations, 8GB RAM, and HDD storage. Network setup includes Cisco Catalyst switches. Located in GK306A.", 
+"total-slots":25, "loc":"GK306A"},
+
+{"id":"lab3",
+"name":"Operations Research and Simulation Lab", 
+"img-link":"https://www.dlsu.edu.ph/wp-content/uploads/2018/09/f-5.jpg", 
+"description":"Facilitates advanced simulations with high-performance servers powered by Intel Xeon processors, 32GB RAM, and RAID storage arrays. Network infrastructure includes Juniper routers and switches. Located in STRC.", 
+"total-slots":25, "loc":"STRC"},
+
+{"id":"lab4",
+"name":"MAC Lab", 
+"img-link":"https://3.files.edl.io/12ee/18/08/06/162910-1ea2f0b9-6c49-4801-9f08-d39b93a0268b.jpeg", 
+"description":"Specialized laboratory for multimedia and arts featuring Apple iMac Pro workstations with Intel Core i9 processors, 32GB RAM, and SSD storage. Network connectivity supported by Apple AirPort Extreme routers. Located in GK203.", 
+"total-slots":25, "loc":"GK203"},
+
+{"id":"lab5",
+"name":"Computer Laboratory", 
+"img-link":"https://www.dlsu.edu.ph/wp-content/uploads/2019/05/The-Twelve-Virtues-of-a-Lasallian-Educator-300x200.jpg", 
+"description":"Offers advanced computing resources with AMD Ryzen Threadripper workstations, 64GB RAM, and NVMe SSD storage. Network infrastructure includes D-Link routers and switches. Located in GK210.", 
+"total-slots":25, "loc":"GK210"}
+
+]
