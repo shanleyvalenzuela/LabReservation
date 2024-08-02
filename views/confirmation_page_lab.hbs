@@ -1,0 +1,68 @@
+        {{!-- <div class="nav">
+            <div class="header">
+                <img id="logo" src="https://img.icons8.com/?size=100&id=57152&format=png&color=C0E56B">
+                <div class="page-title">
+                    <div class="poppins-bold">Room</div>
+                    <div class="poppins-bold" style="color: rgb(192, 235, 106);">Reservation</div>
+                </div>
+            </div>
+            <ul class="nav-options">
+                <li class="nav-option" id="home">Home</li>
+                <li class="nav-option" id="user">User</li>
+                <li class="nav-option" id="search">
+                    <div class="search">
+                        <input type="text" id="search">
+                        <button class="search-button">
+                            <img class="search-icon" src="https://img.icons8.com/?size=100&id=59878&format=png&color=48534F">
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div> --}}
+        {{>nav}}
+        <div class="main-title">
+            <h1>Reservation Confirmed!</h1>
+        </div>
+        <hr>
+        <div class="confirmation-container">
+            <img class="confirmation-image" src="https://www.dlsu.edu.ph/wp-content/uploads/2018/09/f-7.jpg">
+        </div>
+        <div class="confirmation-details">
+            <div class="details-column">
+                <div class="details-column-sec">
+                    <p class="poppins-regular">Name</p>
+                    <p class="poppins-bold details-darkgreen">{{fName}} {{lName}}</p>    
+                    <p class="poppins-regular details-darkgreen">Email</p>
+                    <p class="poppins-bold details-darkgreen">{{email}}</p>    
+                </div>                     
+             </div> <div class="details-icons"> 
+                <div class="details-icons"> 
+                    <div class="icon-wrapper">
+                        <img class="details-icons" src="https://images.vexels.com/media/users/3/157345/isolated/preview/934008c8466ce089e15947cec0a7c61d-flat-laptop-icon-laptop-by-vexels.png">
+                    </div>
+                    <div class="icon-wrapper">
+                        <img class="details-icons" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3230610/calendar-icon-sm.png">
+                    </div>
+                    <div class="icon-wrapper">
+                        <img class="details-icons" src="https://cdn2.iconfinder.com/data/icons/furniture-289/48/furniture_bold-12-512.png">
+                    </div>
+                </div>
+            </div><div class="details-column2">
+                <p class="poppins-regular">Laboratory Room</p>
+                <p class="poppins-bold details-darkgreen">{{lab_name}}</p>
+                <p class="poppins-regular">Reservations</p>
+                {{#each reservations}}
+                <p class="poppins-bold details-darkgreen">{{date}} ({{timeslot}})</p>
+                <p class="poppins-regular">Seat Number/s: {{seats}}</p>
+                {{/each}}
+            </div>
+        </div>
+        <div class="confirmation-footer">
+            <div class="confirmation-footer-container">
+                <p class="poppins-extralight ">Please arrive on time for your reservations. Our no-show policy states that if a student does not show up within <b>10 minutes</b> of their reservation, it will be automatically <b>deleted</b>.</p>
+            </div>
+            <span class="confirmation-footer-container">
+                <button class="confirmation-footer-button"><a href="/home">DONE</a></button>
+            </span>
+        </div>
+    </body>

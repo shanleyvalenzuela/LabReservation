@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<div class="nav">
+  <div class="header">
+    <img id="logo" src="https://img.icons8.com/?size=100&id=57152&format=png&color=C0E56B" alt="Logo">
+    <div class="page-title">
+      <div class="poppins-bold">Room</div>
+      <div class="poppins-bold" style="color: rgb(192, 235, 106);">Reservation</div>
+    </div>
+  </div>
+  <ul class="nav-options">
+    <li class="nav-option"><a href="/admin_home">HOME</a>
+      <a href="/credits">LOG-OUT</a>
+    </li>
+    <li class="nav-option" id="search">
+      <div class="search">
+        <input type="text" id="search">
+        <button class="search-button">
+          <img class="search-icon" src="https://img.icons8.com/?size=100&id=59878&format=png&color=48534F" alt="Search Icon">
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="labs-main">
+    <div class="main-title">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="left-panel">
+        <button class="arrow-btn" id="left-btn">
+            <img class="arrow" src="https://img.icons8.com/?size=100&id=40217&format=png&color=CFCFCF" alt="">
+        </button>
+    </div>
+    <div class="right-panel">
+        <button class="arrow-btn" id="right-btn">
+            <img class="arrow" src="https://img.icons8.com/?size=100&id=7849&format=png&color=CFCFCF">
+        </button>
+    </div>
+   <div class="main-panel">
+        <div class="slide-container">
+            {{#each labs_list}}
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="image-content">
+                        <span class="overlay">
+                            <div class="card-image">
+                                <img src="{{img-link}}" alt="" class="card-img">
+                            </div>
+                        </span>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="name">{{name}} ({{loc}})</h2>
+                        <p class="description">{{description}}</p></div>
+                        <button class="viewslots"><a href="/admin_view/{{id}}/{{name}}/{{loc}}">Edit Reservations</a></button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

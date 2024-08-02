@@ -1,0 +1,40 @@
+{{>nav}}
+<div class="slots-main">
+    <div class="main-title">
+        <h1>Reserve Slots ({{lab_name}}-{{lab_loc}})</h1>
+    </div>
+    <div class="main-panel">
+        <form name="reserve_slots" id="reserveForm">
+            <div class="datetime">
+                <img class="small-icon" src="https://www.svgrepo.com/show/502605/date-range.svg"> 
+                  <select id="date" name="date"></select>
+                <img src="https://www.svgrepo.com/show/522682/time.svg" alt="" class="small-icon">
+                <select id="dropdown" name="dropdown">
+                    {{#each timeslots}}
+                    <option value="{{timeslot}}">{{timeslot}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="room-container">
+                {{> (lookup . 'floor_layout')}}
+                <div class="legend-container">
+                    <div class="legend" id="reserved-legend">Reserved</div>
+                    <div class="legend" id="available-legend">Available</div>
+                    <div class="legend" id="selected-legend">Selected</div>
+                </div>
+            </div>
+            <button class="reserve-button" id="reserveButton" type="button">Add to Reservation</button>
+        </form>
+        <div class="reservations" id="reservations">
+            <h3 class="res_title">Reservations</h3>
+            <div class="reservations-dropdown" id="reservationsDropdown"></div>
+            <button class="makeRes-button" id="makeResButton">Make Reservation</button>
+        </div>
+    </div>
+</div>
+<div class="hidden-form">
+    <input type="hidden" id="lab_id" value="{{lab_id}}">
+    <input type="hidden" id="lab_name" value="{{lab_name}}">
+    <input type="hidden" id="lab_loc" value="{{lab_loc}}">
+</div>
+<script type="text/javascript" src="/common/slots.js"></script>

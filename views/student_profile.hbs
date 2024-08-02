@@ -1,0 +1,133 @@
+
+<div class="nav">
+  <div class="header">
+    <img id="logo" src="https://img.icons8.com/?size=100&id=57152&format=png&color=C0E56B" alt="Logo">
+    <div class="page-title">
+      <div class="poppins-bold">Room</div>
+      <div class="poppins-bold" style="color: rgb(192, 235, 106);">Reservation</div>
+    </div>
+  </div>
+  <ul class="nav-options">
+    <li class="nav-option"><a href="/home">HOME</a>
+      <a href="/credits">LOG-OUT</a>
+    </li>
+    <li class="nav-option" id="search">
+      <div class="search">
+        <input type="text" id="search">
+        <button class="search-button">
+          <img class="search-icon" src="https://img.icons8.com/?size=100&id=59878&format=png&color=48534F" alt="Search Icon">
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<hr>
+<!-- PROFILE DETAILS -->
+<table class="poppins-regular" style="width: 80%; margin-bottom:3%;"> 
+  <tr class="bottom">
+    <th colspan="3" class="bot1"><h1 class="header1">Profile Details</h1></th>
+  </tr>
+  <tr> 
+    <td rowspan="5" style="width:250px;">
+      <img src="/profile-image/{{email}}" alt="profile" width="200px">
+    </td>
+    <td colspan="2">
+      <a href="#" onclick="openEditForm()"><img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" onclick="openEditForm()" alt="edit profile" width="10px"></a>
+      <h1 class="poppins-bold" style="display:inline;">{{firstName}} {{lastName}}</h3>
+      <h3 class="poppins-regular" style="font-size: 20px"><b>Program: </b>{{program}}</h3>
+      <h3 class="poppins-regular" style="font-size: 20px"><b>Contact:</b> {{email}}</h3>
+      
+    </td>
+    </tr>
+  <tr>
+    <td></td>
+    <td>
+      <button class="button" onclick="confirmAndDeleteAccount()" style="background-color: #E89A9A;">DELETE ACCOUNT</button>
+    </td>
+  </tr>
+</table>
+
+<!-- EDIT PROFILE -->
+<form id="edit-form" class="poppins-regular" action="/update-profile" method="POST" style="display: none;">
+<table class="poppins-regular" style="width: 80%;"> 
+  <tr class="bottom">
+    <th colspan="3" class="bot1"><h1 class="header1">Profile Details</h1></th>
+  </tr>
+  <tr> 
+    <td rowspan="5" style="width:250px;">
+      <img src="/profile-image/{{email}}" alt="profile" width="200px">
+    </td>
+    <td colspan="2"> 
+      <input type="hidden" id="id" name="userid" value="{{id}}">
+      <input type="hidden" id="image" name="profileImage" value="/profile-image/{{email}}">
+      <label for="name" class="form-label">Name:</label>
+    <input type="text" id="name" name="fname" value={{firstName}} class="form-input">
+    <input type="text" id="name" name="lname" value={{lastName}} class="form-input">
+    <label for="year" class="form-label">Year:</label>
+    <input type="text" id="program" name="program" value={{program}} class="form-input">
+    <label for="contact" class="form-label">Contact:</label>
+    <input type="text" id="contact" name="contact" value={{email}} class="form-input">
+    <button type="submit" class="button">Save Changes</button> 
+    </td>
+    </tr>
+</table>
+</form>
+
+
+<!-- RESERVATIONS -->
+<table class="poppins-regular" id="reservations" style="width:80%; text-align: center;">
+    <tr class="list">
+        <th colspan="6" class="bot1"><h1 class="header1">Reservations</h2></th>
+    </tr>
+    {{#if reservations.length}}
+    <tr class="list" id="{{id}}">
+      {{#each reservations}}
+        <td >{{lab_name}}</td>
+        <td>{{lab_loc}}</td>
+        <td>{{date}}</td>
+        <td>{{timeslot}}</td>
+        <td>{{seats}}</td>
+        <td><button class="button"><a href="/confirmation_page_lab" style="color: #dddd;">EDIT</a></button></td>
+    </tr>
+    {{/each}}
+</table>
+{{else}}
+<p>No reservations found.</p>
+{{/if}}
+
+
+
+<!-- JavaScript to toggle edit form display -->
+<script>
+  function openEditForm() {
+    document.querySelector('table').style.display = 'none';
+    document.getElementById('edit-form').style.display = 'block';
+  }
+
+  function confirmAndDeleteAccount() {
+    if (confirm('ARE YOU SURE? This action cannot be undone.')) {
+        const userId = '{{id}}'; // Replace with the actual user ID if necessary
+        
+        fetch('/delete-account', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userId: userId })
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = '/';
+            } else {
+                alert('Error deleting account');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error deleting account');
+        });
+    }
+  }
+
+</script>

@@ -1,0 +1,246 @@
+
+<div class="nav">
+  <div class="header">
+    <img id="logo" src="https://img.icons8.com/?size=100&id=57152&format=png&color=C0E56B" alt="Logo">
+    <div class="page-title">
+      <div class="poppins-bold">Room</div>
+      <div class="poppins-bold" style="color: rgb(192, 235, 106);">Reservation</div>
+    </div>
+  </div>
+  <ul class="nav-options">
+    <li class="nav-option"><a href="/admin_home" style="color:white">HOME</a>
+      <a href="/credits" style="color:white">LOG-OUT</a>
+    </li>
+    <li class="nav-option" id="search">
+      <div class="search">
+        <input type="text" id="search">
+        <button class="search-button">
+          <img class="search-icon" src="https://img.icons8.com/?size=100&id=59878&format=png&color=48534F" alt="Search Icon">
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+        <div class="page-text"><h2>Add Reservation</h2></div>
+  
+        <div class="add-reservations-container">
+           <div class="add-reservations-menu">
+                <p class="bot"><a href="#">Add Reservations</a></p>
+                <p class="bot"><a href="/tech_del_reservation">Delete Reservations</a></p>
+           </div>
+            
+           <div class="add-reservations-form">  
+                <form action="/add-reservation" method="post">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name">
+                    
+                    <label for="email">School Email:</label>
+                    <input type="email" id="email" name="email">
+                    
+                    <label for="room">Room:</label>
+                    <select id="room" name="room" required>
+                      {{#each labs_list}}
+                        <option value="{{id}}" name="{{name}}" loc="{{loc}}">{{name}}</option>
+                      {{/each}}
+                    </select>
+                    
+                    <label for="timeslot">Timeslot:</label>
+                    <select id="timeslot" name="timeslot" required>
+                      {{#each timeslots}}
+                      <option value="{{timeslot}}">{{timeslot}}</option>
+                      {{/each}}
+                    </select>
+                    Select Seats: <br>
+                    <div class="room-container">
+                        {{> (lookup . 'floor_layout')}}
+                        <div class="legend-container">
+                            <div class="legend" id="reserved-legend">Reserved</div>
+                            <div class="legend" id="available-legend">Available</div>
+                            <div class="legend" id="selected-legend">Selected</div>
+                        </div>
+                    </div>
+
+                    <button class="add-registration-button poppins-medium" id = "reserveButton" ><a>CREATE</a></button>
+                </form>            
+            </div>
+<script>
+  const seats = document.querySelectorAll('.seat');
+  const reserveButton = document.getElementById('reserveButton');
+  
+  let reservations = [];
+
+  seats.forEach(seat => {
+      seat.addEventListener('click', function() {
+          this.classList.toggle('seat-selected');
+      });
+  });
+
+  //handle reserve
+  reserveButton.addEventListener('click', function() {
+    const roomSelect = document.getElementById('room');
+    const selectedOption = roomSelect.options[roomSelect.selectedIndex];
+    const lab_id = selectedOption.value;
+    const lab_name = selectedOption.getAttribute('data-name');
+    const lab_loc = selectedOption.getAttribute('data-loc');
+
+    const dateToday = new Date();
+    const date = dateToday.toISOString().slice(0, 10);
+    const timeslot = document.getElementById('timeslot').value;
+    const selectedSeats = Array.from(document.querySelectorAll('.seat-selected')).map(seat => seat.getAttribute('id'));
+
+    if (date && timeslot && selectedSeats.length > 0) {
+        const reservation = {
+            date,
+            timeslot,
+            seats: selectedSeats
+        };
+        const reservations = [reservation];
+
+        const data = {
+            lab_id,
+            lab_name,
+            lab_loc,
+            reservations: reservations
+        };
+
+        console.log("reserving");
+        fetch('/reserve', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            } else {
+                throw new Error('Failed to make reservation.');
+            }
+        })
+        .then(html => {
+            document.documentElement.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to make reservation.');
+        });
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
+
+$(document).ready(function() {
+    const dateToday = new Date();
+    var dateInput = dateToday.toISOString().slice(0, 10);
+    var timeSelect = $('#timeslot');
+    var lab_id = selectedOption.value;
+    var lab_name = selectedOption.getAttribute('data-name');
+    var lab_loc = selectedOption.getAttribute('data-loc');
+
+
+    function fetchReservations() {
+        const selectedDate = dateInput.val();
+        const selectedTime = timeSelect.val();
+
+        if (!selectedDate || !selectedTime) {
+            console.log('Date or time not selected.');
+            return;
+        }
+
+        console.log(`Selected date: ${selectedDate}, Selected time: ${selectedTime}`);
+
+        $.get(`/tech-reservations/${lab_id}/${selectedDate}/${selectedTime}`, 
+            { lab_name: labName, lab_loc: labLoc },
+            function(response) {
+                console.log('Response received:', response);
+
+                // Check if response is defined and an array
+                if (!response || !Array.isArray(response)) {
+                    console.error('Invalid response format:', response);
+                    alert('Invalid response from the server. Please try again later.');
+                    return;
+                }
+
+                const reservedSeats = response.map(reservation => {
+                    // Check if reservation has seats and reserver properties
+                    if (!reservation.seats || !reservation.reserver) {
+                        console.error('Invalid reservation format:', reservation);
+                        return [];
+                    }
+
+                    return reservation.seats.map(seatId => {
+                        return {
+                            seatId: seatId,
+                            reserverName: `${reservation.reserver.firstName} ${reservation.reserver.lastName}`
+                        };
+                    });
+                }).flat();
+
+                console.log('Processed Reserved Seats:', reservedSeats);
+
+                const seats = document.querySelectorAll('.seat, .seat-reserved');
+                seats.forEach(function(seat) {
+                    seat.classList.remove('seat-reserved');
+                    seat.classList.add('seat');
+                });
+
+                reservedSeats.forEach(function(reservedSeat) {
+                    console.log(`Updating seat ${reservedSeat.seatId}`);
+                    const seatElement = document.getElementById(reservedSeat.seatId);
+                    if (seatElement) {
+                        seatElement.classList.remove('seat');
+                        seatElement.classList.add('seat-reserved');
+                        seatElement.title = reservedSeat.reserverName; // Optionally set a tooltip with reserver name
+                        seatElement.addEventListener('click', function() {
+                            showReserverDropdown(seatElement, reservedSeat.reserverName);
+                        });
+                    } else {
+                        console.warn(`Seat element with ID ${reservedSeat.seatId} not found`);
+                    }
+                });
+            }
+        )
+    }
+
+    function showReserverDropdown(seatElement, reserverName) {
+        // Create dropdown element
+        const dropdown = document.createElement('div');
+        dropdown.className = 'reserver-dropdown';
+        
+        const link = document.createElement('a');
+        link.className = 'reserver-link';
+        link.href = '#'; // dynamic link to user profile
+        link.textContent = reserverName;
+
+        dropdown.appendChild(link);
+        // Position dropdown
+        const rect = seatElement.getBoundingClientRect();
+        dropdown.style.position = 'absolute';
+        dropdown.style.top = `${rect.bottom}px`;
+        dropdown.style.left = `${rect.left}px`;
+
+        // Append dropdown to body
+        document.body.appendChild(dropdown);
+
+        // Remove dropdown when clicking outside
+        function removeDropdown() {
+            dropdown.remove();
+            document.removeEventListener('click', removeDropdown);
+        }
+
+        setTimeout(() => {
+            document.addEventListener('click', removeDropdown);
+        }, 0);
+    }
+
+    dateInput.on('change', fetchReservations);
+    timeSelect.on('change', fetchReservations);
+
+    // Initially fetch reservations if both date and time are already set
+    if (dateInput.val() && timeSelect.val()) {
+        fetchReservations();
+    }
+});
+
+</script>
