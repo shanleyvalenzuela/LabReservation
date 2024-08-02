@@ -1,0 +1,6 @@
+[{"id":1,"room":"GK306A Computer Laboratory","status":"RESERVED", "flagged": false},
+{"id":2,"room":"Information Systems Laboratory","status":"PENDING", "flagged": false},
+{"id":3,"room":"GK306A Computer Laboratory","status":"PENDING", "flagged": false},
+{"id":4,"room":"MAC Lab","status":"RESERVED", "flagged": false},
+{"id":5,"room":"Operations Research and Simulation Lab","status":"RESERVED", "flagged": false},
+{"id":6,"room":"MAC Lab","status":"PENDING", "flagged": false} ]

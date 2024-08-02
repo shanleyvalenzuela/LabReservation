@@ -1,0 +1,32 @@
+[{"name":""}, 
+{"layout":"<tr>
+                <td><div class="seat">F1</div></td>
+                <td><div class="seat">F2</div></td>
+                <td></td>
+                <td><div class="seat">E1</div></td>
+                <td><div class="seat">E2</div></td>
+                <td></td>
+                <td><div class="seat">D1</div></td>
+                <td><div class="seat">D2</div></td>
+            </tr>
+            <tr>
+                <td><div class="seat">F3</div></td>
+                <td><div class="seat">F4</div></td>
+                <td></td>
+                <td><div class="seat">E3</div></td>
+                <td><div class="seat">E4</div></td>
+                <td></td>
+                <td><div class="seat-reserved">D3</div></td>
+                <td><div class="seat">D4</div></td>
+            </tr>
+            <tr>
+                <td><div class="seat-reserved">F5</div></td>
+                <td><div class="seat">F6</div></td>
+                <td></td>
+                <td><div class="seat">E5</div></td>
+                <td><div class="seat">E6</div></td>
+                <td></td>
+                <td><div class="seat-reserved">D5</div></td>
+                <td><div class="seat">D6</div></td>
+            </tr>"},
+                    ]
